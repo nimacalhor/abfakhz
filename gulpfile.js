@@ -43,7 +43,7 @@ function styles() {
 
 gulp.task('watch', function () {
     gulp.watch([PATH_ALL_SCSS], gulp.parallel(styles));
-    gulp.watch(['./public/index.html'], gulp.parallel(styles));
+    // gulp.watch(['./public/index.html'], gulp.parallel(styles));
 });
 
 exports.styles = styles;

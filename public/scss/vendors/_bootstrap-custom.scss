@@ -1,10 +1,9 @@
 @use "../abstract" as *;
-@import "../../node_modules/bootstrap/scss/bootstrap";
-@import "../../node_modules/bootstrap/scss/functions";
-@import "../../node_modules/bootstrap/scss/variables";
-@import "../../node_modules/bootstrap/scss/mixins";
-@import "../../node_modules/bootstrap/scss/root";
-
+@use "../../node_modules/bootstrap/scss/bootstrap" as *;
+@use "../../node_modules/bootstrap/scss/functions" as *;
+@use "../../node_modules/bootstrap/scss/variables" as *;
+@use "../../node_modules/bootstrap/scss/mixins" as *;
+@use "../../node_modules/bootstrap/scss/root" as *;
 
 .btn {
   @include simpleTransition;
@@ -48,7 +47,7 @@
   background-color: $secondary-300;
 }
 
-.bg-primary{
+.bg-primary {
   background-color: $primary;
 }
 
@@ -60,8 +59,94 @@
   color: $secondary-300;
 }
 
-body, td, tfoot, th, thead, tr {
+body,
+td,
+tfoot,
+th,
+thead,
+tr {
   border-color: inherit;
   border-style: none;
   border-width: 0;
+}
+
+.accordion-item {
+  background: none !important;
+}
+
+.accordion-button {
+  background-color: transparent;
+  color: $text-color-light !important;
+
+  &:not(.collapsed) {
+    color: inherit;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  &:focus {
+    border: none;
+  }
+
+  &.collapsed {
+    color: $text-color-light;
+    border: none;
+    outline: none;
+
+    &::after {
+      margin-right: $gutter-md;
+      color: $text-color-light !important;
+    }
+  }
+
+  &::after {
+    margin-right: $gutter-md;
+    color: $text-color-light;
+  }
+}
+
+.offcanvas-backdrop {
+  z-index: 5 !important;
+}
+
+@include tablet {
+  .accordion-button {
+    &.collapsed {
+      &::after {
+        display: none;
+      }
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .collapse:not(.show) {
+    display: block !important;
+  }
+
+  .offcanvas-end {
+    top: 0;
+    right: 0;
+    border-left: none;
+    transform: translateX(0);
+  }
+  .offcanvas {
+    position: relative;
+    bottom: 0;
+    z-index: 1045;
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    visibility: visible !important;
+    background-color: transparent;
+    background-clip: padding-box;
+    outline: 0;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .offcanvas-backdrop {
+    display: none !important;
+  }
 }
