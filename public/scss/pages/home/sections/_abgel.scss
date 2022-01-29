@@ -1,0 +1,15 @@
+@use "../../../abstract/mixins" as *;
+
+.abgel {
+  background-image: url("../assets/bg.jpg");
+  background-repeat: no-repeat;
+  background-position: 55% 35%;
+  background-size: cover;
+  min-height: 60vh;
+}
+
+@include tablet {
+  .abgel {
+    background-position: 35% 35%;
+  }
+}

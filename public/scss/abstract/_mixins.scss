@@ -1,0 +1,36 @@
+@use "./variables/breakpoints" as br;
+@mixin mobile {
+    @media only screen and (min-width: br.$sm) {
+      @content;
+    }
+  }
+  @mixin tablet {
+    @media only screen and (min-width: br.$md) {
+      @content;
+    }
+  }
+  @mixin laptop {
+    @media only screen and (min-width: br.$lg) {
+      @content;
+    }
+  }
+  @mixin desktop {
+    @media only screen and (min-width: br.$xl) {
+      @content;
+    }
+  }
+  @mixin tv {
+    @media only screen and (min-width: br.$xxl) {
+      @content;
+    }
+  }
+  
+  @mixin simpleTransition {
+    transition: all ease 0.4s;
+  }
+  
+  @mixin pseudo($display: block, $pos: absolute, $content: "") {
+    content: $content;
+    display: $display;
+    position: $pos;
+  }

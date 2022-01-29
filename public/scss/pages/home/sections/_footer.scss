@@ -1,0 +1,18 @@
+@use "../../../abstract" as *;
+.footer {
+  &__main {
+    &__list {
+      list-style: none;
+      padding-inline: 0;
+
+      &__item {
+        &::before {
+          content: "\F017";
+          font-family: FontIcon;
+          color: $secondary-200;
+          font-size: 0.75rem;
+        }
+      }
+    }
+  }
+}

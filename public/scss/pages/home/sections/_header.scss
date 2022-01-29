@@ -1,0 +1,228 @@
+@use "../../../abstract" as *;
+
+.header__link {
+  color: $text-color-dark;
+  font-size: $fs-link;
+  font-weight: $fw-bold;
+  padding: $gutter-md;
+  display: block;
+  width: 100%;
+  border-radius: $rounded-sm;
+  text-align: right;
+
+  &:hover {
+    color: $text-color-dark;
+  }
+}
+
+.header {
+  position: fixed;
+  inset: 0 auto auto 0;
+  background-color: $primary-o;
+  z-index: 10;
+
+  &__heading{
+    height: 75px;
+  }
+
+  &__heading__image {
+    transform: scale(0.6);
+  }
+
+  &__burger {
+    i {
+      color: $secondary-300;
+    }
+  }
+
+  &__nav {
+    padding-block: 0 !important;
+    position: fixed;
+    width: auto !important;
+    min-width: min-content;
+    min-height: 100vh;
+    inset: 0 0 auto 30%;
+    height: fit-content;
+    background-color: $side-drawer-bg;
+    z-index: 20;
+
+    &__close-icon{
+      position: absolute;
+      inset: 2% auto auto 5%;
+      color: $secondary-200;
+    }
+
+    &__search {
+      &__cn {
+        position: relative;
+        width: min(250px, 100%);
+      }
+
+      &__input {
+        display: block;
+        width: 100%;
+        border: 0;
+        box-shadow: $shadow-sm;
+        height: calc(
+          $side-drawer-input-height + $side-drawer-input-btn-distance
+        );
+
+        &:focus {
+          outline: $accent 2px solid;
+        }
+      }
+
+      &__btn {
+        border: 0;
+        height: $side-drawer-input-height;
+        width: $side-drawer-input-height;
+        position: absolute;
+        inset: 50% auto auto $side-drawer-input-btn-distance;
+        transform: translateY(-50%);
+
+        &__icon {
+          font-size: $fs-link;
+        }
+      }
+    }
+
+    &__list {
+      padding: 0;
+      overflow: scroll;
+      height: 100vh;
+
+      &__item {
+        position: relative;
+        width: 100%;
+        text-align: end;
+        background-color: $primary;
+        margin-block: $gutter-md;
+        border-radius: $rounded-sm;
+        box-shadow: $shadow-sm;
+        border: $border-xs;
+
+        &:hover &__link {
+          background-color: $secondary-200;
+        }
+
+        &:hover &__dropdown {
+          display: block;
+        }
+
+        &__link {
+          @extend .header__link;
+        }
+
+        &__dropdown {
+          display: none;
+          background-color: $primary-o;
+          padding: $gutter-lg;
+          @include simpleTransition;
+
+          &__item {
+            padding: $gutter-sm;
+            margin-block: $gutter-xs;
+            border-bottom: $border-xs;
+            @include simpleTransition;
+
+            &:hover &__link{
+              background-color: transparent;
+              color: $secondary-200
+            }
+
+            &__link {
+              @extend .header__link;
+              padding: $gutter-md;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// ________________________________________________________________________________
+@include tablet {
+  .header__link {
+    color: $text-color-dark;
+    font-size: $fs-link;
+    font-weight: $fw-bold;
+    padding: $gutter-md;
+    display: block;
+    width: 100%;
+
+    &:hover {
+      color: $secondary-200;
+    }
+  }
+
+  .header {
+    &__nav {
+      position: static;
+      min-width: auto;
+      min-height: auto;
+      height: auto !important;
+      background-color: transparent;
+      z-index: 1;
+
+      &__list {
+        height: auto;
+        overflow: visible !important;
+      }
+
+      &__list__item {
+        width: fit-content;
+        background-color: transparent;
+        margin-block: 0;
+        padding: 0;
+        margin-inline: $gutter-sm;
+        padding-block: $gutter-lg;
+        box-shadow: none;
+        border: none;
+        @include simpleTransition;
+
+        &:hover {
+          background-color: transparent;
+        }
+
+        &:hover &__link{
+          background-color: transparent;
+        }
+
+        &::after {
+          @include pseudo;
+          transform: scaleX(0);
+          height: 2px;
+          width: 100%;
+          background-color: $secondary-200;
+          top: 100%;
+          transition: transform 0.2s ease-out;
+          transform-origin: right !important;
+        }
+
+        &:hover::after {
+          transform: scaleX(1);
+          transition: transform 0.2s ease-out;
+          transform-origin: left !important;
+        }
+
+        &__dropdown {
+          position: absolute;
+          inset: 100% 0 auto auto;
+          text-align: right;
+          width: min(10rem, 17vw);
+          min-width: min-content;
+
+          &__item {
+            width: 100%;
+            border: none;
+            &:hover &__link{
+              background-color: $secondary-200;
+              color: $text-color-light
+            }
+          }
+        }
+      }
+    }
+  }
+}

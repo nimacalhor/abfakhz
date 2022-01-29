@@ -1,0 +1,93 @@
+@use "../../../abstract" as *;
+
+.news-gallery {
+  --bs-gutter-x: 0;
+}
+
+.gallery {
+  padding-left: min(4rem, 4vw);
+}
+
+.gallery__list {
+  &__cn {
+    // overflow-y: scroll;
+    overflow-x: hidden;
+  }
+
+  padding-right: $gutter-xxl;
+
+  &__item {
+    height: 115px;
+    box-shadow: $shadow-md;
+    border: $border-xs;
+    overflow: hidden;
+    flex-direction: row-reverse;
+
+    &__image {
+      overflow: hidden;
+
+      &__img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+.news {
+  padding-left: min(3rem, 4vw);
+
+  &__slider {
+    &__list {
+      white-space: nowrap;
+      overflow: hidden;
+      &__card {
+        height: 420px;
+        width: min(250px, 90vw);
+        padding: 0 !important;
+        border: $border-xs;
+        box-shadow: $shadow-md;
+        border-radius: $rounded-sm;
+        cursor: pointer;
+        display: inline-block;
+        white-space: normal;
+        margin-inline: $gutter-lg;
+
+        &:hover &__body {
+          background-color: $secondary-200;
+          color: $text-color-light;
+        }
+
+        &__image {
+          height: 45%;
+          overflow: hidden;
+
+          &__img {
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+
+        &__body {
+          height: 55%;
+          @include simpleTransition;
+
+          &__heading {
+            height: 23%;
+          }
+
+          &__text {
+            height: 50%;
+            text-overflow: ellipsis;
+            overflow: hidden;
+          }
+
+          &__info {
+            height: 27%;
+          }
+        }
+      }
+    }
+  }
+}

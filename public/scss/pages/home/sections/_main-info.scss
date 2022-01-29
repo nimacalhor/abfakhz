@@ -1,0 +1,118 @@
+@use "../../../abstract" as *;
+
+.main-info {
+  margin: 0;
+  padding: 0;
+}
+
+.tarhe-omid,
+.main-actions {
+  margin: 0;
+  padding: 0;
+
+  height: 100%;
+}
+
+.tarhe-omid {
+  position: relative;
+  height: inherit;
+  background-color: $secondary-300;
+  color: $text-color-light;
+
+  &__shir-ab {
+    position: absolute;
+    inset: 10% auto auto 100%;
+    width: min(15vw, 150px);
+    z-index: 1;
+  }
+
+  &__body {
+    width: min(100%, 250px);
+  }
+  &__button {
+    &__btn {
+      color: $secondary-300;
+    }
+  }
+}
+
+.main-actions {
+  background: $secondary-200 url("../assets/bg-paralax.jpg") fixed no-repeat
+    center;
+  overflow-y: hidden;
+  height: auto;
+
+  &__grid {
+    width: 90%;
+    height: 100%;
+
+    &__card {
+      padding-right: 0 !important;
+      padding-left: 0 !important;
+      border-radius: $rounded-sm;
+      position: relative;
+      z-index: 5 !important;
+
+      &__icon {
+        position: relative;
+
+        &::after {
+          @include pseudo;
+          top: 45%;
+          right: 94%;
+          // margin-left: -50px;
+          width: 0;
+          height: 0;
+          transform: rotate(90deg);
+          border-top: solid 10px $secondary-100;
+          border-left: solid 10px transparent;
+          border-right: solid 10px transparent;
+        }
+      }
+
+      &__text {
+        overflow: hidden;
+        height: 100%;
+        display: grid;
+        place-content: center;
+        background-color: $primary;
+        @include simpleTransition;
+        &:hover {
+          background-color: $secondary-100;
+        }
+        &:hover &__link {
+          color: $text-color-dark;
+        }
+
+        &__link {
+          color: $secondary-300;
+        }
+      }
+    }
+  }
+}
+
+// ________________________________________________________________________________
+@media only screen and (max-width: 380px) {
+  .main-actions__grid__card {
+    width: min(90%, 250px);
+  }
+}
+
+// ________________________________________________________________________________
+@include tablet {
+  .main-actions {
+    &__grid {
+      width: 80%;
+    }
+  }
+}
+
+// ________________________________________________________________________________
+@include laptop {
+  .main-actions {
+    &__grid {
+      width: 70%;
+    }
+  }
+}

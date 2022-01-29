@@ -1,0 +1,87 @@
+/* icon */
+
+.glyphicon {
+    font-family: FontIcon;
+    position: relative;
+    color: red; 
+    font-style: normal;
+  }
+  
+  .glyphicon-money-receipt::before {
+    content: "\F001";
+  }
+  .glyphicon-long-receipt::before {
+    content: "\F002";
+  }
+  .glyphicon-engine::before {
+    content: "\F003";
+  }
+  .glyphicon-mobile::before {
+    content: "\F004";
+  }
+  .glyphicon-inner-engine::before {
+    content: "\F005";
+  }
+  .glyphicon-calculator::before {
+    content: "\F006";
+  }
+  .glyphicon-buildings::before {
+    content: "\F007";
+  }
+  .glyphicon-desktop-paper::before {
+    content: "\F008";
+  }
+  .glyphicon-handicapped-man::before {
+    content: "\F009";
+  }
+  .glyphicon-paper-group::before {
+    content: "\F010";
+  }
+  .glyphicon-map-pointer-custom::before {
+    content: "\F011";
+  }
+  .glyphicon-map-shaking-hands::before {
+    content: "\F012";
+  }
+  .glyphicon-phone-paper::before {
+    content: "\F013";
+  }
+  .glyphicon-video-player::before {
+    content: "\F014";
+  }
+  .glyphicon-pen-paper::before {
+    content: "\F015";
+  }
+  .glyphicon-arrow-right::before {
+    content: "\F016";
+  }
+  .glyphicon-arrow-left::before {
+    content: "\F017";
+  }
+  .glyphicon-calender::before {
+    content: "\F018";
+  }
+  .glyphicon-envelope::before {
+    content: "\F019";
+  }
+  .glyphicon-phone::before {
+    content: "\F020";
+  }
+  .glyphicon-map-pointer::before {
+    content: "\F021";
+  }
+  .glyphicon-chevron-right::before {
+    content: "\F022";
+  }
+  .glyphicon-chevron-left::before {
+    content: "\F023";
+  }
+  .glyphicon-lock::before {
+    content: "\F024";
+  }
+  .glyphicon-magnifier::before {
+    content: "\F025";
+  }
+  .glyphicon-person::before {
+    content: "\F026";
+  }

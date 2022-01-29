@@ -1,0 +1,96 @@
+@use "../../../abstract" as *;
+
+.hero {
+  height: max(90vh, 500px);
+  position: relative;
+
+  &__carousel {
+    height: 100%;
+
+    &__inner {
+      height: 100%;
+
+      &__item {
+        height: 100%;
+
+        img {
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  &__text {
+    position: absolute;
+    inset: auto 15% 10% auto;
+
+    &__item {
+      text-align: right;
+      max-width: 90%;
+      background-color: $primary-o;
+      font-size: $fs-subtitle;
+      color: $secondary-300;
+      padding: $gutter-md;
+      border-radius: $rounded-sm;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    inset: auto 5% 5% auto;
+    z-index: 6;
+
+    &:hover &__content{
+      max-height: none;
+      padding: $gutter-md;
+    }
+
+    &__btn {
+      border: 0;
+      outline: 2px solid $secondary-200;
+      outline-offset: 4px;
+      @include simpleTransition;
+
+      &:hover {
+        background-color: $secondary-200;
+        outline-offset: 6px;
+        outline: 3px solid $secondary-200;
+      }
+
+      &:active {
+        transform: scale(0.9);
+      }
+
+      &:hover &__icon {
+        color: $text-color-light;
+      }
+
+      &__icon {
+        color: $text-color-dark;
+      }
+    }
+
+    &__content {
+      width: min(64px, 30vw);
+      border-radius: $rounded-sm;
+      position: absolute;
+      max-height: 0;
+      overflow: hidden;
+      padding: 0;
+      @include simpleTransition;
+
+      &__item {
+        min-height: min(30px, 10vw);
+        border-bottom: $border-xs;
+
+        &__btn {
+          height: 100%;
+          width: 100%;
+          display: grid;
+          place-content: center;
+        }
+      }
+    }
+  }
+}

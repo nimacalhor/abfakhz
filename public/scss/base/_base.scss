@@ -1,0 +1,46 @@
+@use "../abstract" as *;
+
+body{
+  direction: rtl;
+}
+
+a{
+  text-decoration: none !important;
+}
+
+h2 {
+  font-size: $fs-heading !important;
+}
+
+h3 {
+  font-size: $fs-subtitle !important;
+}
+
+footer h4 {
+  font-size: $fs-heading-footer;
+}
+
+p {
+  font-size: $fs-body;
+}
+
+.list-cn {
+  margin: 0;
+  list-style: none;
+}
+
+.glyphicon-arrow-left,
+.glyphicon-arrow-right {
+  font-size: $fs-icon-btn;
+
+  &::before {
+    transform: translateY(2px);
+  }
+}
+
+.footer__upper__box {
+  .glyphicon {
+    font-size: $fs-upper-footer-icon;
+    color: $text-color-light;
+  }
+}

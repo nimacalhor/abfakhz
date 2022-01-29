@@ -1,0 +1,67 @@
+@use "../abstract" as *;
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/root";
+
+
+.btn {
+  @include simpleTransition;
+  border: none;
+}
+
+.btn-secondary {
+  background-color: $secondary-200;
+  color: $primary;
+  &:hover {
+    background-color: darken($color: $secondary-200, $amount: 10%);
+  }
+}
+
+.btn-secondary-dark {
+  background-color: $secondary-300;
+  color: $primary;
+}
+
+.btn-primary {
+  background-color: $primary;
+  &:hover {
+    background-color: darken($color: $primary, $amount: 10%);
+  }
+}
+
+.btn-accent {
+  background-color: $accent;
+  &:hover {
+    background-color: darken($color: $accent, $amount: 10%);
+  }
+}
+
+.bg-secondary-light {
+  background-color: $secondary-100;
+}
+.bg-secondary {
+  background-color: $secondary-200 !important;
+}
+.bg-secondary-dark {
+  background-color: $secondary-300;
+}
+
+.bg-primary{
+  background-color: $primary;
+}
+
+.text-light {
+  color: $primary;
+}
+
+.text-dark {
+  color: $secondary-300;
+}
+
+body, td, tfoot, th, thead, tr {
+  border-color: inherit;
+  border-style: none;
+  border-width: 0;
+}
