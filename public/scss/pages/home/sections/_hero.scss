@@ -72,7 +72,7 @@
     }
 
     &__content {
-      width: min(64px, 30vw);
+      width: min(75px, 35vw);
       border-radius: $rounded-sm;
       position: absolute;
       max-height: 0;
@@ -81,7 +81,7 @@
       @include simpleTransition;
 
       &__item {
-        min-height: min(30px, 10vw);
+        // min-height: min(30px, 10vw);
         border-bottom: $border-xs;
 
         &__btn {
