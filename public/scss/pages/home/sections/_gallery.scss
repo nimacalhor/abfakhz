@@ -44,7 +44,7 @@
       overflow: hidden;
       overflow-x: scroll;
       &__card {
-        height: 420px;
+        max-height: 450px;
         width: min(250px, 90vw);
         padding: 0 !important;
         border: $border-xs;
@@ -76,6 +76,7 @@
 
           &__heading {
             height: 23%;
+            overflow: hidden;
           }
 
           &__text {
@@ -88,9 +89,48 @@
             height: 27%;
             padding-top: $gutter-md;
             border-top: $border-xs;
+            font-size: $fs-body;
           }
         }
       }
     }
+  }
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  display: inline-block;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  position: static;
+  top: auto;
+  width: auto;
+  height: auto;
+  margin-top: 0;
+  z-index: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $text-color-dark;
+
+  &::after{
+    content: "";
+    display: none;
   }
 }
