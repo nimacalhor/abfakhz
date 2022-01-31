@@ -1,55 +1,59 @@
 @use "../abstract" as *;
-@use "../../node_modules/bootstrap/scss/bootstrap" as *;
-@use "../../node_modules/bootstrap/scss/functions" as *;
-@use "../../node_modules/bootstrap/scss/variables" as *;
-@use "../../node_modules/bootstrap/scss/mixins" as *;
-@use "../../node_modules/bootstrap/scss/root" as *;
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/root";
 
 .btn {
   @include simpleTransition;
   border: none;
-}
 
-.btn-secondary {
-  background-color: $secondary-200;
-  color: $primary;
-  &:hover {
-    background-color: darken($color: $secondary-200, $amount: 10%);
+  &-secondary {
+    background-color: $secondary-200;
+    color: $primary;
+    &:hover {
+      background-color: darken($color: $secondary-200, $amount: 10%);
+    }
+
+    &-secondary-dark {
+      background-color: $secondary-300;
+      color: $primary;
+    }
+  }
+
+  &-primary {
+    background-color: $primary;
+    &:hover {
+      background-color: darken($color: $primary, $amount: 10%);
+    }
+  }
+
+  &-accent {
+    background-color: $accent;
+    &:hover {
+      background-color: darken($color: $accent, $amount: 10%);
+    }
   }
 }
 
-.btn-secondary-dark {
-  background-color: $secondary-300;
-  color: $primary;
-}
+.bg {
+  &-secondary {
+    background-color: $secondary-200 !important;
 
-.btn-primary {
-  background-color: $primary;
-  &:hover {
-    background-color: darken($color: $primary, $amount: 10%);
+    &-light {
+      background-color: $secondary-100;
+    }
+    &-dark {
+      background-color: $secondary-300;
+    }
+  }
+  
+  &-primary {
+    background-color: $primary;
   }
 }
 
-.btn-accent {
-  background-color: $accent;
-  &:hover {
-    background-color: darken($color: $accent, $amount: 10%);
-  }
-}
-
-.bg-secondary-light {
-  background-color: $secondary-100;
-}
-.bg-secondary {
-  background-color: $secondary-200 !important;
-}
-.bg-secondary-dark {
-  background-color: $secondary-300;
-}
-
-.bg-primary {
-  background-color: $primary;
-}
 
 .text-light {
   color: $primary;
