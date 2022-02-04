@@ -15,6 +15,7 @@
   }
 
   padding-right: $gutter-xxl;
+  height: $news-card-height;
 
   &__item {
     height: 115px;
@@ -40,11 +41,9 @@
 
   &__slider {
     &__list {
-      white-space: nowrap;
-      overflow: hidden;
-      overflow-x: scroll;
+      // white-space: nowrap;
       &__card {
-        height: 450px;
+        height: $news-card-height;
         width: min(250px, 90vw);
         padding: 0 !important;
         border: $border-xs;
@@ -128,7 +127,7 @@
   justify-content: center;
   color: $text-color-dark;
 
-  &::after{
+  &::after {
     content: "";
     display: none;
   }
