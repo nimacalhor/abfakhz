@@ -1,16 +1,16 @@
-$fs-body: clamp(0.5rem, 3.5vw, 0.8rem);
+$fs-body: clamp(0.7rem, calc(12px + 0.28vw), 0.787rem);
 
-$fs-link: clamp(0.4rem, 3vw, 0.7rem);
+$fs-link: clamp(0.805rem, calc(12px + 0.42vw), 0.875rem);
 
-$fs-title: clamp(1.5rem, 5vw, 1.8rem);
+$fs-title: clamp(1.487rem, calc(12px + 1.925vw), 2.012rem);
 
-$fs-subtitle: clamp(1.12rem, 4vw, 1.28rem);
+$fs-subtitle: clamp(1.050rem, calc( 12px + 1.200vw ), 1.350rem);
 
-$fs-subtitle-2: clamp(1.15rem, 4vw, 1.32rem);
+$fs-subtitle-2: clamp(0.997rem, calc(12px + 1.05vw), 1.313rem);
 
-$fs-heading: clamp(1.15rem, 2vw, 1.25rem);
+$fs-heading: clamp(0.897rem, calc(12px + 1vw), 1.213rem);
 
-$fs-heading-footer: clamp(1.07rem, 4vw, 1.2rem);
+$fs-heading-footer: clamp(0.875rem, calc(12px + 0.7vw), 1.05rem);
 
 $fs-icon-btn: 0.8rem;
 

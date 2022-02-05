@@ -16,6 +16,7 @@
     />
     <meta property="og:locale" value="fa_IR" />
     <meta property="og:site_name" value="....com" />
+    <meta name="description" content="صفحه اصلی شرکت اب و فاضلاب استان خوزستان">
 
     <!-- swiper  -->
     <link
@@ -821,7 +822,7 @@
         <!-- buutton ____________________ -->
         <div class="gallery__button px-4 d-flex justify-content-end">
           <button
-            class="gallery__button btn-text-icon btn bg-secondary btn-secondary"
+            class="gallery__button btn-text-icon btn bg-secondary btn-secondary mt-4"
           >
             آرشیو…
             <i class="glyphicon glyphicon-arrow-left"></i>
@@ -939,10 +940,16 @@
         <!-- map ____________________ -->
         <div class="khoozestan__map col-12 col-md-6 col-lg-4">
           <img
+            usemap="#Khozestan"
             src="./assets/MAp-01.svg"
             alt="khoozestan map"
-            class="khoozestan__map__img"
+            class="khoozestan__map__img border-3 border-dark"
           />
+          <map name="Khozestan">
+            <area title="اندیشمک" shape="rect" coords="52,14,120,104" alt="اندیشمک" href="andishmak.htm">
+            <area title="اندیشمک" shape="rect" coords="93,14,139,73" alt="اندیشمک" href="andishmak.htm">
+            <area title="دزفول" shape="rect" coords="142,28,269,85" alt="دزفول" href="dezful.htm">
+          </map>
         </div>
         <!-- text ____________________ -->
         <div class="khoozestan__body col-12 col-md-6 col-lg-8">
@@ -1302,10 +1309,10 @@
                 </div>
                 <!-- validation number -->
                 <div class="footer__main__code input-group pb-4 pt-3">
-                  <span class="border-1 border-light input-group-text"
-                    >774369</span
-                  >
+                  <label for="footerCode" class="border-1 border-light input-group-text p-0"
+                    >774369</>
                   <input
+                    id="footerCode"
                     type="text"
                     class="footer__main__code__input form-control"
                   />
